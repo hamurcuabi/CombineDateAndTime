@@ -21,7 +21,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 	...
-	 implementation 'com.github.hamurcuabi:CombineDateAndTime:v1.0.1'
+	 implementation 'com.github.hamurcuabi:CombineDateAndTime:v1.1.1'
 }
 ```
 
