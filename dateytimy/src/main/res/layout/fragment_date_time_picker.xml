@@ -3,18 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/cardview_dark_background"
     android:orientation="vertical">
 
     <com.emrhmrc.dateytimy.helper.HeightWrappingViewPager
         android:id="@+id/view_pager_date_time"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layput"
         android:layout_width="match_parent"
+        app:tabBackground="@color/cardview_dark_background"
         android:layout_height="wrap_content"
+        app:tabTextColor="@android:color/white"
         app:tabGravity="fill"
         app:tabMode="fixed" />
 
@@ -26,12 +30,12 @@
         android:padding="8dp">
 
         <Button
+            android:background="@color/cardview_light_background"
             android:id="@+id/btn_cancel"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:textColor="@android:color/white" />
+            android:text="Cancel" />
 
         <Space
             android:layout_width="0dp"
@@ -39,12 +43,12 @@
             android:layout_weight="1" />
 
         <Button
+            android:background="@color/cardview_light_background"
             android:id="@+id/btn_okey"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Okey"
-            android:textColor="@android:color/white" />
+            android:text="Okey" />
     </LinearLayout>
 
 
