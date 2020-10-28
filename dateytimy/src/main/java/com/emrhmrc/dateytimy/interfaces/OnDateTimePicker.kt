@@ -4,11 +4,11 @@ package com.emrhmrc.dateytimy.interfaces
 interface OnDateTimePicker {
     /**
     The Desciption of the method to explain what the method does
-    @param [year]
-    @param [month]
-    @param [dayOfMonth]
-    @param [hour]
-    @param [minute]
+    @param [year] for year
+    @param [month] fro month
+    @param [dayOfMonth] for dayOfMonth
+    @param [hour] for hour
+    @param [minute] for minute
      */
     fun onDateTimePick(year: Int, month: Int, dayOfMonth: Int, hour: Int, minute: Int)
 }
