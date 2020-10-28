@@ -27,18 +27,17 @@ dependencies {
 
 ## Usage Kotlin
 
-```  class MainActivity : AppCompatActivity(), OnDateTimePicker {.....
-  ```
- Use it
- ```
-  DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
-  ```
-  
+``` 
+class MainActivity : AppCompatActivity(), `OnDateTimePicker` {
+
+
+DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
+
+  ``` 
   ## Usage Java
 
-```  class MainActivity : AppCompatActivity(), OnDateTimePicker {.....
-  ```
- Use it
- ```
-  DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
+``` 
+class MainActivity : AppCompatActivity(), `OnDateTimePicker` {
+```
+ DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
   ```
