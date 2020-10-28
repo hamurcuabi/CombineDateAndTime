@@ -41,6 +41,6 @@ DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragmen
 class MainActivity extends AppCompatActivity implements `OnDateTimePicker` {
 
 
-new DateTimePickerFragment(this).show(getSupportFragmentManager, "DateTimePickerFragment")
+new DateTimePickerFragment(this).show(getSupportFragmentManager(), "DateTimePickerFragment")
 
   ``` 
