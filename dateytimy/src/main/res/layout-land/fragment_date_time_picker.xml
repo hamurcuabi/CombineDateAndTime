@@ -8,17 +8,18 @@
 
     <com.emrhmrc.dateytimy.helper.HeightWrappingViewPager
         android:id="@+id/view_pager_date_time"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layput"
         android:layout_width="match_parent"
-        app:tabBackground="@color/lightColor"
-        app:tabIndicatorColor="@color/darkColor"
         android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:tabBackground="@color/lightColor"
         app:tabGravity="fill"
+        app:tabIndicatorColor="@color/darkColor"
         app:tabMode="fixed"
         app:tabTextColor="@android:color/white" />
 

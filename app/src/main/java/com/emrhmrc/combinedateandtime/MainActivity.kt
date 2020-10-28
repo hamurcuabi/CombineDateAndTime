@@ -10,6 +10,14 @@ class MainActivity : AppCompatActivity(), OnDateTimePicker {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        /*    val option = Options.apply {
+                theme = R.style.ThemeOverlay_AppCompat_Dark
+                tabDateText = "Date"
+                tabTimeText = "Time"
+                buttonsBacgroud = R.color.design_default_color_on_primary
+                cancelTxt = "İptall"
+                okeyText = "Okkey"
+            }*/
         DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
     }
 

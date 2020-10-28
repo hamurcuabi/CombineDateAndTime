@@ -18,6 +18,7 @@ class DatePickerFragment(private val onDateSelected: OnDateSelected) :
     private val month = c.get(Calendar.MONTH)
     private val day = c.get(Calendar.DAY_OF_MONTH)
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentDatePickerBinding.bind(view)

@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.emrhmrc.dateytimy.helper.ViewPagerAdapter
 import com.emrhmrc.dateytimy.databinding.FragmentDateTimePickerBinding
+import com.emrhmrc.dateytimy.helper.ViewPagerAdapter
 import com.emrhmrc.dateytimy.interfaces.OnDateSelected
 import com.emrhmrc.dateytimy.interfaces.OnDateTimePicker
 import com.emrhmrc.dateytimy.interfaces.OnTimeSelected
 import java.util.*
 
 /**Created by hamurcuabi on 28,October,2020 **/
-class DateTimePickerFragment(val onDateTimePicker: OnDateTimePicker) : DialogFragment(),
+class DateTimePickerFragment(val onDateTimePicker: OnDateTimePicker?) :
+    DialogFragment(),
     OnDateSelected, OnTimeSelected {
-
     private lateinit var binding: FragmentDateTimePickerBinding
     private var year: Int = 0
     private var month: Int = 0
@@ -23,9 +23,17 @@ class DateTimePickerFragment(val onDateTimePicker: OnDateTimePicker) : DialogFra
     private var hour: Int = 0
     private var minute: Int = 0
 
+    companion object {
+        fun newInstance(bundle: Bundle): DateTimePickerFragment {
+            val fragment = DateTimePickerFragment(null)
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
+
     init {
-        val cal = Calendar.getInstance();
-        year = cal.get(Calendar.YEAR);
+        val cal = Calendar.getInstance()
+        year = cal.get(Calendar.YEAR)
         month = cal.get(Calendar.MONTH) + 1
         hour = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
@@ -38,6 +46,9 @@ class DateTimePickerFragment(val onDateTimePicker: OnDateTimePicker) : DialogFra
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDateTimePickerBinding.inflate(inflater, container, false)
+        binding.tabLayput.setBackgroundColor(Options.buttonsBacgroud)
+        binding.btnCancel.text = Options.cancelTxt
+        binding.btnOkey.text = Options.okeyText
         return binding.root
     }
 
@@ -47,14 +58,16 @@ class DateTimePickerFragment(val onDateTimePicker: OnDateTimePicker) : DialogFra
         val datePickerFragment: DatePickerFragment = DatePickerFragment(this)
         val timePickerFragment: TimePickerFragment = TimePickerFragment(this)
 
-        adapter.addFragment(datePickerFragment, "TARİH")
-        adapter.addFragment(timePickerFragment, "SAAT")
+        adapter.addFragment(datePickerFragment, Options.tabDateText)
+        adapter.addFragment(timePickerFragment, Options.tabTimeText)
         binding.viewPagerDateTime.adapter = adapter
         binding.tabLayput.setupWithViewPager(binding.viewPagerDateTime)
 
         binding.btnCancel.setOnClickListener { dismiss() }
         binding.btnOkey.setOnClickListener {
-            onDateTimePicker.onDateTimePick(year, month, dayOfMonth, hour, minute)
+            onDateTimePicker?.let {
+                it.onDateTimePick(year, month, dayOfMonth, hour, minute)
+            }
             dismiss()
         }
 
@@ -76,8 +89,7 @@ class DateTimePickerFragment(val onDateTimePicker: OnDateTimePicker) : DialogFra
         //  Toast.makeText(requireContext(), "Hour:$hour , minute:$minute", Toast.LENGTH_SHORT).show()
         this.hour = hour
         this.minute = minute
-        onDateTimePicker.onDateTimePick(year, month, dayOfMonth, hour, minute)
-        dismiss()
+        binding.buttonHolder.visibility = View.VISIBLE
     }
 
 

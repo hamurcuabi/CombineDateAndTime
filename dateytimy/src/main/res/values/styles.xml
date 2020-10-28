@@ -1,0 +1,12 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="CombineDateAndTime.Light" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/lightColor</item>
+    </style>
+
+    <style name="CombineDateAndTime.Dark" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/darkColor</item>
+    </style>
+
+
+</resources>
