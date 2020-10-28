@@ -21,7 +21,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 	...
-	 implementation 'com.github.hamurcuabi:CombineDateAndTime:v1.1.1'
+	 implementation 'com.github.hamurcuabi:CombineDateAndTime:v1.3.1'
 }
 ```
 
@@ -44,7 +44,20 @@ class MainActivity extends AppCompatActivity implements `OnDateTimePicker` {
 new DateTimePickerFragment(this).show(getSupportFragmentManager(), "DateTimePickerFragment")
 
   ``` 
+  ## Opitons
   
+  ```
+      val option = Options.apply {
+                theme = R.style.ThemeOverlay_AppCompat_Dark
+                tabDateText = "Tarih"
+                tabTimeText = "Saat"
+                buttonsBacgroud = R.color.design_default_color_on_primary
+                cancelTxt = "İptall"
+                okeyText = "Okkey"
+            }
+	    
+	    
+  ```
   ## Preview
   
   <p float="left">
