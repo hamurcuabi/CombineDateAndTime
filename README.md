@@ -36,8 +36,11 @@ DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragmen
   ``` 
   ## Usage Java
 
+
 ``` 
-class MainActivity : AppCompatActivity(), `OnDateTimePicker` {
-```
- DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
-  ```
+class MainActivity extends AppCompatActivity implements `OnDateTimePicker` {
+
+
+new DateTimePickerFragment(this).show(getSupportFragmentManager, "DateTimePickerFragment")
+
+  ``` 
