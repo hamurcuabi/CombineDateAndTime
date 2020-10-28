@@ -1,5 +1,5 @@
 # CombineDateAndTime
-
+[![](https://jitpack.io/v/hamurcuabi/CombineDateAndTime.svg)](https://jitpack.io/#hamurcuabi/CombineDateAndTime)
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 	...
-	 implementation 'com.github.hamurcuabi:CombineDateAndTime:Tag'
+	 implementation 'com.github.hamurcuabi:CombineDateAndTime:v1.0.1'
 }
 ```
 
@@ -36,8 +36,11 @@ DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragmen
   ``` 
   ## Usage Java
 
+
 ``` 
-class MainActivity : AppCompatActivity(), `OnDateTimePicker` {
-```
- DateTimePickerFragment(this).show(supportFragmentManager, "DateTimePickerFragment")
-  ```
+class MainActivity extends AppCompatActivity implements `OnDateTimePicker` {
+
+
+new DateTimePickerFragment(this).show(getSupportFragmentManager(), "DateTimePickerFragment")
+
+  ``` 
